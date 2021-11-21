@@ -9,10 +9,15 @@ import {
   IonTabs,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { ellipse, square, triangle } from 'ionicons/icons';
-import Tab1 from './pages/Tab1';
-import Tab2 from './pages/Tab2';
-import Tab3 from './pages/Tab3';
+import { MdOutlineCake, MdFoodBank } from "react-icons/md";
+import { homeSharp, beerOutline } from 'ionicons/icons';
+import { TiLeaf } from "react-icons/ti";
+import Home from './pages/Home';
+import Starters from './pages/Starters';
+import Desserts from './pages/Desserts';
+import MainCourses from './pages/MainCourses';
+import Drinks from './pages/Drinks';
+import "./App.css";
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -38,31 +43,42 @@ const App: React.FC = () => (
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
-          <Route exact path="/tab1">
-            <Tab1 />
+          <Route path="/home">
+            <Home />
           </Route>
-          <Route exact path="/tab2">
-            <Tab2 />
+          <Route path="/starters">
+            <Starters />
           </Route>
-          <Route path="/tab3">
-            <Tab3 />
+          <Route path="/desserts">
+            <Desserts />
           </Route>
-          <Route exact path="/">
-            <Redirect to="/tab1" />
+          <Route path="/maincourse">
+            <MainCourses />
+          </Route>
+          <Route path="/drinks">
+            <Drinks />
           </Route>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
-          <IonTabButton tab="tab1" href="/tab1">
-            <IonIcon icon={triangle} />
-            <IonLabel>Tab 1</IonLabel>
+        <IonTabButton tab="home" href="/home">
+            <IonIcon icon={homeSharp} />
+            <IonLabel>Home</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab2" href="/tab2">
-            <IonIcon icon={ellipse} />
-            <IonLabel>Tab 2</IonLabel>
+          <IonTabButton tab="starters" href="/starters">
+            <TiLeaf />
+            <IonLabel>Starters</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab3" href="/tab3">
-            <IonIcon icon={square} />
-            <IonLabel>Tab 3</IonLabel>
+          <IonTabButton tab="desserts" href="/desserts">
+            <MdOutlineCake />
+            <IonLabel>Desserts</IonLabel>
+          </IonTabButton>
+          <IonTabButton tab="maincourse" href="/maincourse">
+            <MdFoodBank />
+            <IonLabel>Main Course</IonLabel>
+          </IonTabButton>
+          <IonTabButton tab="drinks" href="/drinks">
+            <IonIcon icon={beerOutline} />
+            <IonLabel>Drinks</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>

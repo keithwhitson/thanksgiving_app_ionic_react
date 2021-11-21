@@ -1,0 +1,29 @@
+.ion-tab-bar {
+    margin-top: -5px;
+}
+
+#tab-button-maincourse > ion-label,
+
+#tab-button-desserts > ion-label,
+#tab-button-starters > ion-label
+{
+    font-size: 0.7rem;
+}
+
+
+#tab-button-drinks ion-icon{
+    height: 1.3rem;
+    /* display: none; */
+}
+
+#tab-button-home ion-icon {
+    height: 1.3rem;
+}
+
+#tab-button-maincourse > ion-label {
+    font-size: 0.65rem;
+}
+
+#tab-button-maincourse, #tab-button-starters {
+    margin-top: 3px;
+}
